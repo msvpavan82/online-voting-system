@@ -1,5 +1,6 @@
 package com.example.onlinevotingsystem.service;
 
+import com.example.onlinevotingsystem.model.Result;
 import com.example.onlinevotingsystem.model.User;
 import com.example.onlinevotingsystem.repository.VotingRepository;
 import org.springframework.stereotype.Service;
@@ -33,5 +34,9 @@ public class VotingService {
         if(voteStatus != 0 && voteCountUpdate != 0)
             return "Vote Casted Successfully";
         return "Vote Failed";
+    }
+
+    public List<Result> displayResults() {
+        return votingRepository.displayResults();
     }
 }
